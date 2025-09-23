@@ -131,9 +131,10 @@ public class TestList {
 
   @Test
   public void testAddAll() {
-    // TODO in a single statement using addAll and List.of,
+    // in a single statement using addAll and List.of,
     // add items to the list to make the following assertions pass
     // (without touching the assertions themselves)
+      list.addAll(List.of(33, 77, 44, 77, 55, 77, 66));
     assertEquals(7, list.size());
     assertEquals(33, list.get(0).intValue());
     assertEquals(77, list.get(1).intValue());
@@ -153,11 +154,13 @@ public class TestList {
     list.add(55);
     list.add(77);
     list.add(66);
-    // TODO in a single statement using removeAll and List.of,
+    // in a single statement using removeAll and List.of,
     // remove items from the list to make the following assertions pass
     // (without touching the assertions themselves)
+      list.removeAll(List.of(33, 44, 55, 66));
     assertEquals(3, list.size());
     assertEquals(List.of(77, 77, 77), list);
+
   }
 
   @Test
@@ -169,9 +172,10 @@ public class TestList {
     list.add(55);
     list.add(77);
     list.add(66);
-    // TODO in a single statement using retainAll and List.of,
+    // in a single statement using retainAll and List.of,
     // remove items from the list to make the following assertions pass
     // (without touching the assertions themselves)
+      list.retainAll(List.of(77));
     assertEquals(3, list.size());
     assertEquals(List.of(77, 77, 77), list);
   }
@@ -185,9 +189,12 @@ public class TestList {
     list.add(55);
     list.add(77);
     list.add(66);
-    // TODO use the set method to change specific elements in the list
+    //  use the set method to change specific elements in the list
     // such that the following assertions pass
     // (without touching the assertions themselves)
+      list.set(1, 99);
+      list.set(3, 99);
+      list.set(5, 99);
     assertEquals(7, list.size());
     assertEquals(33, list.get(0).intValue());
     assertEquals(99, list.get(1).intValue());
@@ -207,8 +214,8 @@ public class TestList {
     list.add(55);
     list.add(77);
     list.add(66);
-    // TODO fix the arguments in the subList method so that the assertion
+    // fix the arguments in the subList method so that the assertion
     // passes
-    assertEquals(List.of(44, 77, 55), list.subList(0, 0));
+    assertEquals(List.of(44, 77, 55), list.subList(2, 5));
   }
 }
