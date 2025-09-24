@@ -22,7 +22,7 @@ public class TestIterator {
   public void setUp() throws Exception {
     list = new ArrayList<Integer>();
     //list = new LinkedList<>();
-    // TODO Question: Also try with a LinkedList - does it make any difference?
+    //  Question: Also try with a LinkedList - does it make any difference?
   }
 
   @After
@@ -76,12 +76,14 @@ public class TestIterator {
     final var i = list.iterator();
     while (i.hasNext()) {
       if (i.next() == 77) {
-        i.remove(); // TODO Question: What happens if you use list.remove(Integer.valueOf(77))?
+        i.remove(); //  Question: What happens if you use list.remove(Integer.valueOf(77))?
+
       }
     }
     // using assertEquals and List.of, express which values are left in the list
     // See TestList.java for examples of how to use List.of; also see the Java List
     // interface for more information
+
       assertEquals(List.of(33, 44, 55, 66), list);
     //fail("Not yet implemented"); // remove this line when done
   }
